@@ -50,12 +50,86 @@
     },
     "best_sellers_zeciAR": {
       "type": "best-sellers",
+      "blocks": {
+        "best_selling_products_p87CzX": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-3p-fulfilled-snowboard"
+          }
+        },
+        "best_selling_products_PgTtR7": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-archived-snowboard"
+          }
+        },
+        "best_selling_products_FC6jP9": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-collection-snowboard-hydrogen"
+          }
+        },
+        "best_selling_products_qtfTKF": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-collection-snowboard-liquid"
+          }
+        },
+        "best_selling_products_rPMQxW": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-collection-snowboard-oxygen"
+          }
+        },
+        "best_selling_products_BcJiRy": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-compare-at-price-snowboard"
+          }
+        },
+        "best_selling_products_P9NEBB": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-complete-snowboard"
+          }
+        },
+        "best_selling_products_bKCPGp": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-inventory-not-tracked-snowboard"
+          }
+        },
+        "best_selling_products_q9rJRi": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-multi-location-snowboard"
+          }
+        },
+        "best_selling_products_rQqKPQ": {
+          "type": "best-selling-products",
+          "settings": {
+            "best-selling-product": "the-multi-managed-snowboard"
+          }
+        }
+      },
+      "block_order": [
+        "best_selling_products_p87CzX",
+        "best_selling_products_PgTtR7",
+        "best_selling_products_FC6jP9",
+        "best_selling_products_qtfTKF",
+        "best_selling_products_rPMQxW",
+        "best_selling_products_BcJiRy",
+        "best_selling_products_P9NEBB",
+        "best_selling_products_bKCPGp",
+        "best_selling_products_q9rJRi",
+        "best_selling_products_rQqKPQ"
+      ],
       "settings": {
         "color_scheme": "",
         "title": "Best Sellers",
         "size-mobile": "mobile-size",
         "size-desktop": "desktop-size",
-        "weight": "normal",
+        "weight": "bold",
         "link-text": "Shop All Best Sellers",
         "link-url": "",
         "link-size": "text-md",

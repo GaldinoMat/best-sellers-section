@@ -1,12 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-    .tw-text-mobile-size {
-      @apply tw-text-[28px] tw-leading-6; /* Custom size with line height */
-    }
-    .tw-text-desktop-size  {
-      @apply tw-text-[40px] tw-leading-8;
-    }
+  .tw-text-mobile-size {
+    @apply tw-text-[28px] tw-leading-6;
   }
+  .tw-text-tablet-size {
+    @apply tw-text-[32px] tw-leading-6;
+  }
+  .tw-text-desktop-size {
+    @apply tw-text-[40px] tw-leading-8;
+  }
+}
