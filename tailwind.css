@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .tw-text-mobile-size {
+      @apply tw-text-[28px] tw-leading-6; /* Custom size with line height */
+    }
+    .tw-text-desktop-size  {
+      @apply tw-text-[40px] tw-leading-8;
+    }
+  }

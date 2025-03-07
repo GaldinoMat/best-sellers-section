@@ -1,0 +1,182 @@
+<div class="tw-py-6 tw-px-9">
+    <div class="tw-mb-6">
+        <p class="tw-text-center tw-text-{{ section.settings.size-mobile }} lg:tw-text-{{ section.settings.size-desktop }} tw-font-{{ section.settings.weight }}">{{ section.settings.title }}</p>
+        <a class="tw-hidden" href="{{ section.settings.link-url }}">{{ section.settings.link-text }}</a>
+    </div>
+    <div>
+        {% for block in section.blocks %}
+            {% assign product = block.settings.best-selling-product %}
+            {% if product.available %}
+                product is ok
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best Sellers Section",
+  "tag": "section",
+  "class": "best-sellers",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color settings"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Text settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "select",
+      "id": "size-mobile",
+      "label": "Section title size mobile",
+      "options": [
+        {
+          "value": "lg",
+          "label": "Medium"
+        },
+        {
+          "value": "xl",
+          "label": "Large"
+        },
+        {
+          "value": "2xl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "mobile-size",
+          "label": "3X Large"
+        }
+      ],
+      "default": "mobile-size"
+    },
+    {
+      "type": "select",
+      "id": "size-desktop",
+      "label": "Section title size desktop",
+      "options": [
+        {
+          "value": "2xl",
+          "label": "Large"
+        },
+        {
+          "value": "3xl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "desktop-size",
+          "label": "3X Large"
+        }
+      ],
+      "default": "desktop-size"
+    },
+    {
+      "type": "select",
+      "id": "weight",
+      "label": "Section title weight",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "semibold",
+          "label": "Semi-Bold"
+        },
+        {
+          "value": "bold",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Link Settings"
+    },
+    {
+      "type": "text",
+      "id": "link-text",
+      "label": "Section link text",
+      "default": "Shop All Best Sellers"
+    },
+    {
+      "type": "url",
+      "id": "link-url",
+      "label": "Section link url"
+    },
+    {
+      "type": "select",
+      "id": "link-size",
+      "label": "Section link size",
+      "options": [
+        {
+          "value": "text-md",
+          "label": "Medium"
+        },
+        {
+          "value": "text-xl",
+          "label": "Large"
+        },
+        {
+          "value": "text-2xl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "text-3xl",
+          "label": "3X Large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "link-weight",
+      "label": "Section link weight",
+      "options": [
+        {
+          "value": "font-normal",
+          "label": "Normal"
+        },
+        {
+          "value": "font-semibold",
+          "label": "Semi-Bold"
+        },
+        {
+          "value": "font-bold",
+          "label": "Bold"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+        "type": "best-selling-products",
+        "name": "Best selling product",
+        "settings": [
+            {
+                "type": "product",
+                "id": "best-selling-product",
+                "label": "Product"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+        "name": "Best Sellers Section"
+    }
+  ]
+}
+{% endschema %}
