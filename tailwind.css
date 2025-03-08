@@ -6,25 +6,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .hide-scroll-arrows {
-    
-    &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(83, 83, 83, 0.07);
-      background-color: #DDD6D7;
-    }
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    &::-webkit-scrollbar-thumb {
-      height: 4px;
-      background-color: #231F20;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-      height: 6px;      
-    }
+@layer components {
+  .product-image {
+    @apply tw-h-[159px] md:tw-h-[257px] lg:tw-h-[355px] tw-object-contain tw-rounded-lg;
   }
 
+  .product-image-tag {
+    @apply tw-z-10 tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-[10px] tw-font-normal tw-top-1 md:tw-top-2;
+  }
+}
+
+@layer utilities {
   .tw-text-mobile-size {
     @apply tw-text-[28px] tw-leading-6;
   }

@@ -3592,6 +3592,35 @@ details-disclosure > details {
     transform: translateX(30%) scaleX(0.7);
   }
   100% {
-    transform: translateX(100%) scaleX(0);
+    transform: translateX(100%) scal  eX(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .slider-wrapper.swiper-wrapper {
+    display: grid;
+  }
+
+  .slider-wrapper.swiper-wrapper .swiper-slide {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
+    display: block;
+    background: #231F20;
+  }
+
+  .swiper-scrollbar.swiper-scrollbar-horizontal:hover .swiper-scrollbar-drag,
+  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:hover,
+  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:active {
+    scale: 1 1.5;
+    transition: all 0.3s ease-in-out;
+    cursor: grab;
+  }
+
+  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:active {
+    cursor: grabbing;
   }
 }

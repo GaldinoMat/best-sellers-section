@@ -15,9 +15,9 @@
   }
 {% endstyle %}
 
-<div class="tw-py-6 tw-px-9 {{ section.id }} lg:tw-py-[82px] lg:tw-pl-32 lg:tw-pr-0 lg:tw-relative" id="best-seller-section-{{ section.id }}">
+<div class="tw-py-6 tw-px-9 {{ section.id }} lg:tw-py-[82px] lg:tw-px-0 lg:tw-relative" id="best-seller-section-{{ section.id }}">
   <div
-    class="tw-mb-6 md:tw-mb-[30px] lg:tw-mb-[38px] lg:tw-flex lg:tw-justify-between lg:tw-items-center"
+    class="tw-mb-6 md:tw-mb-[30px] lg:tw-mb-[38px] lg:tw-flex lg:tw-justify-between lg:tw-px-32 lg:tw-items-center"
     id="best-seller-section-title-{{ section.id }}"
   >
     <a
@@ -39,10 +39,10 @@
     </a>
   </div>
   <div
-    class="tw-mb-3 md:tw-mb-4 tw-max-h-[572px] md:tw-max-h-[746px] lg:tw-max-h-none tw-overflow-hidden tw-transition-all tw-duration-300 show-more-div"
+    class="tw-mb-3 md:tw-mb-4 tw-max-h-[572px] md:tw-max-h-[746px] lg:tw-h-[519px] lg:tw-max-h-none tw-overflow-hidden tw-transition-all tw-duration-300 show-more-div swiper"
     id="best-seller-section-products-{{ section.id }}"
   >
-    <div class="tw-grid tw-grid-cols-2 tw-gap-3 lg:tw-flex lg:tw-overflow-x-scroll lg:tw-gap-6 lg:tw-pb-12 hide-scroll-arrows">
+    <div class="tw-grid-cols-2 tw-gap-3 lg:tw-gap-0 slider-wrapper swiper-wrapper">
       {% for block in section.blocks %}
         {% assign product = block.settings['best-selling-product'] %}
         {% if product.available %}
@@ -58,12 +58,12 @@
               assign discount_percentage = discount_amount | times: 100.0 | divided_by: compare_at_price | round
             endif
           %}
-          <a href="/products/{{ product.handle }}" class="tw-font-best-seller lg:tw-w-[355px]">
-            <div class="tw-relative tw-mb-3 lg:tw-mb-4">
+          <a href="/products/{{ product.handle }}" class="tw-font-best-seller lg:tw-w-[355px] swiper-slide">
+            <div class="tw-relative tw-mb-3 lg:tw-mb-4 group">
               {% for tag in product.tags %}
                 {% if tag contains 'Best Seller' %}
                   <span
-                    class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-[10px] tw-font-normal tw-top-1 tw-left-1 md:tw-top-2 md:tw-left-2"
+                    class="product-image-tag tw-left-1 md:tw-left-2"
                     style="background-color: {{ section.settings.color_scheme.settings.background }}; color: {{ section.settings.color_scheme.settings.text }}; border-color: {{ section.settings.color_scheme.settings.secondary_button_label }}"
                     >Best Seller
                   </span>
@@ -75,7 +75,7 @@
                 | image_url: width: 3200
                 | image_tag:
                   widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                  class: 'tw-h-[159px] md:tw-h-[257px] lg:tw-h-[355px] tw-object-contain tw-rounded-lg'
+                  class: 'product-image group-hover:tw-opacity-0'
               }}
               {% if product.media[1] != blank %}
                 {% assign second_media = product.media[1] %}
@@ -85,7 +85,7 @@
                     | image_url: width: 3200
                     | image_tag:
                       widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                      class: 'tw-absolute tw-top-0 tw-opacity-0 tw-h-[159px] md:tw-h-[257px] tw-object-contain tw-rounded-lg'
+                      class: 'tw-absolute tw-top-0 tw-opacity-0 group-hover:tw-opacity-100 product-image'
                   }}
                 {% elsif second_media.media_type == 'video' %}
                   second is video
@@ -93,7 +93,7 @@
               {% endif %}
               {% if has_discount == true %}
                 <span
-                  class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-[10px] tw-font-normal tw-top-1 tw-right-1 md:tw-top-2 md:tw-right-2"
+                  class="product-image-tag tw-right-1 md:tw-right-2"
                   style="background-color: {{ section.settings.color_scheme.settings.shadow }}; color: {{ section.settings.color_scheme.settings.background }}; border-color: {{ section.settings.color_scheme.settings.secondary_button_label }}"
                 >
                   Save {{ discount_percentage }}%
@@ -134,6 +134,7 @@
         {% endif %}
       {% endfor %}
     </div>
+    <div class="swiper-scrollbar"></div>
   </div>
   <input type="checkbox" class="!tw-hidden peer" name="show-more-{{ section.id }}" id="show-more-{{ section.id }}">
   <label
