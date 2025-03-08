@@ -22,6 +22,7 @@ module.exports = {
     "tw-text-3xl",
     "md:tw-text-xl",
     "md:tw-text-2xl",
+    "lg:tw-text-sm",
     "lg:tw-text-2xl",
     "lg:tw-text-3xl",
 
@@ -34,6 +35,12 @@ module.exports = {
     "tw-font-normal",
     "tw-font-semibold",
     "tw-font-bold",
+    "md:tw-font-normal",
+    "md:tw-font-semibold",
+    "md:tw-font-bold",
+    "lg:tw-font-normal",
+    "lg:tw-font-semibold",
+    "lg:tw-font-bold",
   ],
   plugins: [
     remToPxPlugin({

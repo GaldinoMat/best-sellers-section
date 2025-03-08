@@ -612,6 +612,23 @@ video {
 .tw-duration-300{
   transition-duration: 300ms;
 }
+.hide-scroll-arrows {
+    
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(83, 83, 83, 0.07);
+      background-color: #DDD6D7;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      height: 4px;
+      background-color: #231F20;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      height: 6px;      
+    }
+  }
 .tw-text-mobile-size{
   font-size: 28px;
   line-height: 24px;
@@ -644,9 +661,15 @@ video {
   .md\:tw-w-3{
     width: 12px;
   }
+  .md\:tw-gap-\[5px\]{
+    gap: 5px;
+  }
   .md\:tw-text-2xl{
     font-size: 24px;
     line-height: 32px;
+  }
+  .md\:tw-text-\[10px\]{
+    font-size: 10px;
   }
   .md\:tw-text-lg{
     font-size: 18px;
@@ -660,9 +683,14 @@ video {
     font-size: 20px;
     line-height: 28px;
   }
-  .md\:tw-text-xs{
-    font-size: 12px;
-    line-height: 16px;
+  .md\:tw-font-bold{
+    font-weight: 700;
+  }
+  .md\:tw-font-normal{
+    font-weight: 400;
+  }
+  .md\:tw-font-semibold{
+    font-weight: 600;
   }
   .md\:tw-text-tablet-size{
     font-size: 32px;
@@ -670,6 +698,62 @@ video {
   }
 }
 @media (min-width: 1024px){
+  .lg\:tw-relative{
+    position: relative;
+  }
+  .lg\:tw-mb-4{
+    margin-bottom: 16px;
+  }
+  .lg\:tw-mb-\[38px\]{
+    margin-bottom: 38px;
+  }
+  .lg\:tw-flex{
+    display: flex;
+  }
+  .lg\:tw-hidden{
+    display: none;
+  }
+  .lg\:tw-h-\[355px\]{
+    height: 355px;
+  }
+  .lg\:tw-max-h-none{
+    max-height: none;
+  }
+  .lg\:tw-w-\[355px\]{
+    width: 355px;
+  }
+  .lg\:tw-items-center{
+    align-items: center;
+  }
+  .lg\:tw-justify-between{
+    justify-content: space-between;
+  }
+  .lg\:tw-gap-2{
+    gap: 8px;
+  }
+  .lg\:tw-gap-6{
+    gap: 24px;
+  }
+  .lg\:tw-overflow-x-scroll{
+    overflow-x: scroll;
+  }
+  .lg\:tw-px-3{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .lg\:tw-py-\[82px\]{
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+  .lg\:tw-pb-12{
+    padding-bottom: 48px;
+  }
+  .lg\:tw-pl-32{
+    padding-left: 128px;
+  }
+  .lg\:tw-pr-0{
+    padding-right: 0px;
+  }
   .lg\:tw-text-2xl{
     font-size: 24px;
     line-height: 32px;
@@ -677,6 +761,26 @@ video {
   .lg\:tw-text-3xl{
     font-size: 30px;
     line-height: 36px;
+  }
+  .lg\:tw-text-base{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .lg\:tw-text-sm{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .lg\:tw-font-bold{
+    font-weight: 700;
+  }
+  .lg\:tw-font-normal{
+    font-weight: 400;
+  }
+  .lg\:tw-font-semibold{
+    font-weight: 600;
+  }
+  .lg\:tw-underline{
+    text-decoration-line: underline;
   }
   .lg\:tw-text-desktop-size{
     font-size: 40px;

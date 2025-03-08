@@ -15,18 +15,34 @@
   }
 {% endstyle %}
 
-<div class="tw-py-6 tw-px-9 {{ section.id }}" id="best-seller-section-{{ section.iid }}">
-  <div class="tw-mb-6 md:tw-mb-[30px]" id="best-seller-section-title-{{ section.iid }}">
-    <p
-      class="tw-font-best-seller-title tw-text-center tw-text-{{ section.settings.size-mobile }} md:tw-text-{{ section.settings.size-tablet }} lg:tw-text-{{ section.settings.size-desktop }} tw-font-{{ section.settings.weight }}"
+<div class="tw-py-6 tw-px-9 {{ section.id }} lg:tw-py-[82px] lg:tw-pl-32 lg:tw-pr-0 lg:tw-relative" id="best-seller-section-{{ section.id }}">
+  <div
+    class="tw-mb-6 md:tw-mb-[30px] lg:tw-mb-[38px] lg:tw-flex lg:tw-justify-between lg:tw-items-center"
+    id="best-seller-section-title-{{ section.id }}"
+  >
+    <a
+      class="tw-font-best-seller-title tw-text-center tw-text-{{ section.settings.size_mobile }} md:tw-text-{{ section.settings.size_tablet }} lg:tw-text-{{ section.settings.size_desktop }} tw-font-{{ section.settings.weight }}"
+      href="{{ section.settings.link-url }}"
       style="color: {{ section.settings.color_scheme.settings.text }};"
     >
       {{ section.settings.title }}
-    </p>
-    <a class="tw-hidden" href="{{ section.settings.link-url }}">{{ section.settings['link-text'] }}</a>
+    </a>
+    <a
+      class="tw-hidden lg:tw-flex lg:tw-gap-2 lg:tw-text-{{ section.settings.link_size }} lg:tw-font-{{ section.settings.link_weight }} lg:tw-underline"
+      href="{{ section.settings.link-url }}"
+      style="color: {{ section.settings.color_scheme.settings.shadow }};"
+    >
+      {{ section.settings.link_text }}
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.33334 10H16.6667M16.6667 10L11.6667 5M16.6667 10L11.6667 15" stroke="{{ section.settings.color_scheme.settings.shadow }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </div>
-  <div class="tw-mb-3 md:tw-mb-4 tw-max-h-[572px] md:tw-max-h-[746px] tw-overflow-hidden tw-transition-all tw-duration-300 show-more-div" id="best-seller-section-products-{{ section.iid }}">
-    <div class="tw-grid tw-grid-cols-2 tw-gap-3">
+  <div
+    class="tw-mb-3 md:tw-mb-4 tw-max-h-[572px] md:tw-max-h-[746px] lg:tw-max-h-none tw-overflow-hidden tw-transition-all tw-duration-300 show-more-div"
+    id="best-seller-section-products-{{ section.id }}"
+  >
+    <div class="tw-grid tw-grid-cols-2 tw-gap-3 lg:tw-flex lg:tw-overflow-x-scroll lg:tw-gap-6 lg:tw-pb-12 hide-scroll-arrows">
       {% for block in section.blocks %}
         {% assign product = block.settings['best-selling-product'] %}
         {% if product.available %}
@@ -42,12 +58,12 @@
               assign discount_percentage = discount_amount | times: 100.0 | divided_by: compare_at_price | round
             endif
           %}
-          <a href="/products/{{ product.handle }}" class="tw-font-best-seller">
-            <div class="tw-relative tw-mb-3">
+          <a href="/products/{{ product.handle }}" class="tw-font-best-seller lg:tw-w-[355px]">
+            <div class="tw-relative tw-mb-3 lg:tw-mb-4">
               {% for tag in product.tags %}
                 {% if tag contains 'Best Seller' %}
                   <span
-                    class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-xs tw-font-normal tw-top-1 tw-left-1 md:tw-top-2 md:tw-left-2"
+                    class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-[10px] tw-font-normal tw-top-1 tw-left-1 md:tw-top-2 md:tw-left-2"
                     style="background-color: {{ section.settings.color_scheme.settings.background }}; color: {{ section.settings.color_scheme.settings.text }}; border-color: {{ section.settings.color_scheme.settings.secondary_button_label }}"
                     >Best Seller
                   </span>
@@ -59,7 +75,7 @@
                 | image_url: width: 3200
                 | image_tag:
                   widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                  class: 'tw-h-[159px] md:tw-h-[257px] tw-object-contain tw-rounded-lg'
+                  class: 'tw-h-[159px] md:tw-h-[257px] lg:tw-h-[355px] tw-object-contain tw-rounded-lg'
               }}
               {% if product.media[1] != blank %}
                 {% assign second_media = product.media[1] %}
@@ -77,18 +93,18 @@
               {% endif %}
               {% if has_discount == true %}
                 <span
-                  class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-xs tw-font-normal tw-top-1 tw-right-1 md:tw-top-2 md:tw-right-2"
+                  class="tw-absolute tw-border tw-border-solid tw-rounded-full tw-py-1 tw-px-2 tw-text-[8px] md:tw-text-[10px] tw-font-normal tw-top-1 tw-right-1 md:tw-top-2 md:tw-right-2"
                   style="background-color: {{ section.settings.color_scheme.settings.shadow }}; color: {{ section.settings.color_scheme.settings.background }}; border-color: {{ section.settings.color_scheme.settings.secondary_button_label }}"
                 >
                   Save {{ discount_percentage }}%
                 </span>
               {% endif %}
             </div>
-            <div class="tw-flex tw-px-2 tw-flex-col tw-gap-2">
+            <div class="tw-flex tw-px-2 tw-flex-col tw-gap-2 lg:tw-w-[355px] lg:tw-px-3">
               <p class="tw-text-base md:tw-text-lg" style="color: {{ section.settings.color_scheme.settings.text }};">
                 {{ product.title }}
               </p>
-              <div class="tw-flex tw-gap-1 tw-items-center">
+              <div class="tw-flex tw-gap-1 md:tw-gap-[5px] tw-items-center">
                 <span class="tw-flex">
                   {% for i in (1..5) %}
                     <svg
@@ -108,7 +124,7 @@
                 </p>
               </div>
               <div
-                class="tw-text-base md:tw-text-lg tw-font-best-seller-price tw-font-medium"
+                class="tw-text-base md:tw-text-lg lg:tw-text-base tw-font-best-seller-price tw-font-medium"
                 style="color: {{ section.settings.color_scheme.settings.text }};"
               >
                 {{ price | money }}
@@ -119,11 +135,11 @@
       {% endfor %}
     </div>
   </div>
-  <input type="checkbox" class="!tw-hidden" name="show-more-{{ section.id }}" id="show-more-{{ section.id }}">
+  <input type="checkbox" class="!tw-hidden peer" name="show-more-{{ section.id }}" id="show-more-{{ section.id }}">
   <label
-    class="tw-block tw-w-full tw-rounded-full tw-font-best-seller-price tw-text-base md:tw-text-lg tw-py-4 tw-text-center tw-font-semibold"
+    class="lg:tw-hidden tw-block tw-w-full tw-rounded-full tw-font-best-seller-price tw-text-base md:tw-text-lg tw-py-4 tw-text-center tw-font-semibold"
     for="show-more-{{ section.id }}"
-    id="best-seller-section-show-more-button-{{ section.iid }}"
+    id="best-seller-section-show-more-button-{{ section.id }}"
     style="background-color: {{ section.settings.color_scheme.settings.button }}; color: {{ section.settings.color_scheme.settings.button_label }};"
   >
   </label>
@@ -157,7 +173,7 @@
     },
     {
       "type": "select",
-      "id": "size-mobile",
+      "id": "size_mobile",
       "label": "Section title size mobile",
       "options": [
         {
@@ -181,7 +197,7 @@
     },
     {
       "type": "select",
-      "id": "size-tablet",
+      "id": "size_tablet",
       "label": "Section title size tablet",
       "options": [
         {
@@ -201,7 +217,7 @@
     },
     {
       "type": "select",
-      "id": "size-desktop",
+      "id": "size_desktop",
       "label": "Section title size desktop",
       "options": [
         {
@@ -244,7 +260,7 @@
     },
     {
       "type": "text",
-      "id": "link-text",
+      "id": "link_text",
       "label": "Section link text",
       "default": "Shop All Best Sellers"
     },
@@ -255,7 +271,7 @@
     },
     {
       "type": "select",
-      "id": "link-size",
+      "id": "link_size",
       "label": "Section link size",
       "options": [
         {
@@ -270,11 +286,12 @@
           "value": "lg",
           "label": "Large"
         }
-      ]
+      ],
+      "default": "sm"
     },
     {
       "type": "select",
-      "id": "link-weight",
+      "id": "link_weight",
       "label": "Section link weight",
       "options": [
         {
@@ -289,7 +306,8 @@
           "value": "bold",
           "label": "Bold"
         }
-      ]
+      ],
+      "default": "semibold"
     }
   ],
   "blocks": [
