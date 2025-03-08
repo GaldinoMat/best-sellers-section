@@ -57,9 +57,14 @@
               assign discount_amount = compare_at_price | minus: price
               assign discount_percentage = discount_amount | times: 100.0 | divided_by: compare_at_price | round
             endif
+
+            assign first_media_class = 'product-image group-hover:tw-opacity-0 tw-relative tw-z-10 tw-transition-all tw-duration-300'
+            if product.media[1] != blank
+              assign first_media_class = 'product-image'
+            endif
           %}
           <a href="/products/{{ product.handle }}" class="tw-font-best-seller lg:tw-w-[355px] swiper-slide">
-            <div class="tw-relative tw-mb-3 lg:tw-mb-4 group">
+            <div class="tw-relative tw-mb-3 lg:tw-mb-4 tw-group">
               {% for tag in product.tags %}
                 {% if tag contains 'Best Seller' %}
                   <span
@@ -75,7 +80,7 @@
                 | image_url: width: 3200
                 | image_tag:
                   widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                  class: 'product-image group-hover:tw-opacity-0'
+                  class: first_media_class
               }}
               {% if product.media[1] != blank %}
                 {% assign second_media = product.media[1] %}
@@ -85,7 +90,7 @@
                     | image_url: width: 3200
                     | image_tag:
                       widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                      class: 'tw-absolute tw-top-0 tw-opacity-0 group-hover:tw-opacity-100 product-image'
+                      class: 'tw-absolute tw-top-0 tw-opacity-0 group-hover:tw-opacity-100 product-image tw-z-[9] tw-transition-all tw-duration-300'
                   }}
                 {% elsif second_media.media_type == 'video' %}
                   second is video
