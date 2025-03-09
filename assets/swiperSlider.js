@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
         dragSize: 480,
       },
       enabled: false,
+      mousewheel: {
+        enabled: true,
+      },
       on: {
         init: handleInit(wrapper),
       },

@@ -3627,6 +3627,15 @@ details-disclosure > details {
   }
 }
 
+@media (min-width: 1440px) {
+  .show-more-div-container.swiper {
+    min-height: 560px;
+  }
+
+  .slider-wrapper.swiper-wrapper {
+    height: 560px;
+  }
+}
 
 .lds-ring,
 .lds-ring div {

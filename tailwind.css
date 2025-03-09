@@ -8,7 +8,7 @@
 
 @layer components {
   .product-image {
-    @apply tw-h-[160px] xxs:tw-h-[192px] xs:tw-h-[268px] md:tw-h-[396px] xl:tw-h-[355px] tw-object-fill tw-rounded-xl tw-transition-all tw-duration-300;
+    @apply tw-h-[160px] xxs:tw-h-[192px] xs:tw-h-[268px] md:tw-h-[396px] xl:tw-h-[356px] 2xl:tw-h-[384px] tw-object-fill tw-rounded-xl tw-transition-all tw-duration-300;
   }
 
   .product-video {
