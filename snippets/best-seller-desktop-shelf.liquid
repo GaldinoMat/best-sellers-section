@@ -1,0 +1,5 @@
+<div class="tw-hidden slider-wrapper swiper-wrapper">
+  {% for block in section.blocks %}
+    {% render 'best-seller-card', product: block.settings['best-selling-product'], section: section %}
+  {% endfor %}
+</div>

@@ -1,0 +1,15 @@
+<div
+  class="tw-mb-3 md:tw-mb-4 lg:tw-mb-0 tw-overflow-hidden tw-transition-all tw-duration-300 show-more-div-container swiper"
+  id="best-seller-section-products-{{ section.id }}"
+>
+  {% render 'best-seller-mobile-shelf', section: section %}
+  {% render 'best-seller-desktop-shelf', section: section %}
+  <div class="swiper-scrollbar"></div>
+</div>
+<input type="checkbox" class="!tw-hidden" name="show-more-{{ section.id }}" id="show-more-{{ section.id }}">
+<label
+  class="lg:tw-hidden tw-block tw-w-full tw-rounded-full tw-font-best-seller-price tw-text-base md:tw-text-lg tw-py-4 tw-text-center tw-font-semibold"
+  for="show-more-{{ section.id }}"
+  id="best-seller-section-show-more-button-{{ section.id }}"
+  style="background-color: {{ section.settings.color_scheme.settings.button }}; color: {{ section.settings.color_scheme.settings.button_label }};"
+></label>

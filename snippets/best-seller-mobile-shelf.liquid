@@ -1,0 +1,13 @@
+<div class="lg:tw-hidden">
+  <div class="tw-grid-cols-2 tw-gap-3 lg:tw-gap-0 tw-grid tw-mb-3">
+    {% for i in (0..3) %}
+      {% render 'best-seller-card', product: section.blocks[i].settings['best-selling-product'], section: section %}
+    {% endfor %}
+  </div>
+  <div class="tw-max-h-0 show-more-div tw-grid tw-grid-cols-2 tw-gap-3 lg:tw-gap-0">
+    {% assign section_block_size = section.blocks.size.size | plus: 1 %}
+    {% for i in (4..section_block_size) %}
+      {% render 'best-seller-card', product: section.blocks[i].settings['best-selling-product'], section: section %}
+    {% endfor %}
+  </div>
+</div>

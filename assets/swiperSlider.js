@@ -13,8 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // when window width is >= 1024px
         1024: {
           enabled: true,
-          slidesPerView: 4.5,
-          spaceBetween: 30,
+          slidesPerView: 3,
+          spaceBetween: 12,
+          slidesOffsetAfter: 56,
+          slidesOffsetBefore: 56,
+        },
+        1440: {
+          enabled: true,
+          slidesPerView: 5,
+          spaceBetween: 24,
           slidesOffsetAfter: 128,
           slidesOffsetBefore: 128,
         },

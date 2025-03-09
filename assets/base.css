@@ -3596,17 +3596,16 @@ details-disclosure > details {
   }
 }
 
-@media (max-width: 1023px) {
-  .slider-wrapper.swiper-wrapper {
-    display: grid;
-  }
-
-  .slider-wrapper.swiper-wrapper .swiper-slide {
-    width: 100% !important;
-  }
+.slider-wrapper.swiper-wrapper {
+  display: none;
 }
 
 @media (min-width: 1024px) {
+  .slider-wrapper.swiper-wrapper {
+    display: flex;
+    height: 528px;
+  }
+
   .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
     display: block;
     background: #231F20;
