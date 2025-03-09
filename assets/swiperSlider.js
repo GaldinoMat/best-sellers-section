@@ -6,9 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollbar: {
         el: ".swiper-scrollbar",
         hide: false,
-        draggable: true
+        draggable: true,
       },
       enabled: false,
+      on: {
+        init: function () {
+          if (window.innerWidth >= 1024) {
+            const wrapper = bestSellerSwiper.querySelector(".slider-wrapper");
+            const spinner = document.querySelector(".lds-ring");
+            if (wrapper !== null && spinner !== null) {
+              wrapper.style.display = "flex";
+              spinner.style.display = "none";
+            }
+          }
+        },
+      },
       breakpoints: {
         // when window width is >= 1024px
         1024: {
