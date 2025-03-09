@@ -127,13 +127,14 @@
       "settings": {
         "color_scheme": "",
         "title": "Best Sellers",
-        "size-mobile": "mobile-size",
-        "size-desktop": "desktop-size",
+        "size_mobile": "mobile-size",
+        "size_tablet": "tablet-size",
+        "size_desktop": "desktop-size",
         "weight": "bold",
-        "link-text": "Shop All Best Sellers",
+        "link_text": "Shop All Best Sellers",
         "link-url": "",
-        "link-size": "text-md",
-        "link-weight": "font-normal"
+        "link_size": "sm",
+        "link_weight": "semibold"
       }
     }
   },
