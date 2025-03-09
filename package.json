@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "run-p -sr dev:shopify dev:vite",
     "dev:shopify": "shopify theme dev --store best-sellers-section --live-reload=full-page",
-    "dev:vite": "vite build --watch"
+    "dev:vite": "vite build --watch",
+    "build": "vite build --minify"
   }
 }
