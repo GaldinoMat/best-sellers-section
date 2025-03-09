@@ -6,7 +6,7 @@ module.exports = {
   content: ["./**/*.liquid"],
   theme: {
     screens: {
-      'xxs': '480px',
+      'xxs': '375px',
       'xs': '556px',
       'sm': '640px',
       'md': '768px',

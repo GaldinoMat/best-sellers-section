@@ -37,7 +37,7 @@
       <p class="tw-text-base md:tw-text-lg" style="color: {{ section.settings.color_scheme.settings.text }};">
         {{ product.title }}
       </p>
-      <div class="tw-flex tw-gap-1 md:tw-gap-[5px] tw-items-center">
+      <div class="tw-flex tw-flex-col tw-items-start tw-gap-1 md:tw-gap-[5px] xxs:tw-items-center xxs:tw-flex-row">
         <span class="tw-flex">
           {% for i in (1..5) %}
             {% render 'review-star-icon' %}

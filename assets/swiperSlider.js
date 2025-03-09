@@ -1,7 +1,25 @@
+function handleInit(wrapper) {
+  if (window.innerWidth >= 1024) {
+    const spinner = document.querySelector(".lds-ring");
+    if (spinner !== null) {
+      wrapper.style.display = "flex";
+      spinner.style.display = "none";
+    }
+  }
+}
+
+function handleResize(wrapper) {
+  if (wrapper !== null) {
+    window.innerWidth >= 1024 ? handleInit(wrapper) : wrapper.style.display = "none";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const bestSellerSwiper = document.querySelector(".swiper");
 
   if (bestSellerSwiper !== null) {
+    const wrapper = bestSellerSwiper.querySelector(".slider-wrapper");
+
     new Swiper(bestSellerSwiper, {
       scrollbar: {
         el: ".swiper-scrollbar",
@@ -11,16 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       enabled: false,
       on: {
-        init: function () {
-          if (window.innerWidth >= 1024) {
-            const wrapper = bestSellerSwiper.querySelector(".slider-wrapper");
-            const spinner = document.querySelector(".lds-ring");
-            if (wrapper !== null && spinner !== null) {
-              wrapper.style.display = "flex";
-              spinner.style.display = "none";
-            }
-          }
-        },
+        init: handleInit(wrapper),
       },
       breakpoints: {
         // when window width is >= 1024px
@@ -31,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           slidesOffsetAfter: 56,
           slidesOffsetBefore: 56,
         },
+        // when window width is >= 1440px
         1440: {
           enabled: true,
           slidesPerView: 5,
@@ -40,5 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
+
+    window.addEventListener("resize", () => handleResize(wrapper));
   }
 });
