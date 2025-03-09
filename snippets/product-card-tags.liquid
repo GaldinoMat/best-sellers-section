@@ -1,0 +1,24 @@
+{% liquid
+  assign bg_color = section.settings.color_scheme.settings.background
+  assign text_color = section.settings.color_scheme.settings.text
+  assign border_color = section.settings.color_scheme.settings.secondary_button_label
+
+  if is_discount == true
+    assign bg_color = section.settings.color_scheme.settings.shadow
+    assign text_color = section.settings.color_scheme.settings.background
+  endif
+%}
+
+<span
+  class="
+    product-image-tag
+    {% if is_discount == true %}
+        tw-right-1 md:tw-right-2
+    {% else %}
+        tw-left-1 md:tw-left-2
+    {% endif %}
+  "
+  style="background-color: {{ bg_color }}; color: {{ text_color }}; border-color: {{ border_color }}"
+>
+  {{ tag_text }}
+</span>

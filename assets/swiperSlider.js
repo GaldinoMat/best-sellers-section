@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el: ".swiper-scrollbar",
         hide: false,
         draggable: true,
+        dragSize: 480,
       },
       enabled: false,
       on: {
