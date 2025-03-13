@@ -3596,47 +3596,6 @@ details-disclosure > details {
   }
 }
 
-.slider-wrapper.swiper-wrapper {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .show-more-div-container.swiper {
-    min-height: 528px;
-  }
-
-  .slider-wrapper.swiper-wrapper {
-    height: 528px;
-  }
-
-  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag {
-    display: block;
-    background: #231F20;
-  }
-
-  .swiper-scrollbar.swiper-scrollbar-horizontal:hover .swiper-scrollbar-drag,
-  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:hover,
-  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:active {
-    scale: 1 1.5;
-    transition: all 0.3s ease-in-out;
-    cursor: grab;
-  }
-
-  .swiper-scrollbar.swiper-scrollbar-horizontal .swiper-scrollbar-drag:active {
-    cursor: grabbing;
-  }
-}
-
-@media (min-width: 1440px) {
-  .show-more-div-container.swiper {
-    min-height: 560px;
-  }
-
-  .slider-wrapper.swiper-wrapper {
-    height: 560px;
-  }
-}
-
 .lds-ring,
 .lds-ring div {
   box-sizing: border-box;

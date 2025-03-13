@@ -1,10 +1,9 @@
 <div
-  class="tw-mb-3 md:tw-mb-4 lg:tw-mb-0 show-more-div-container swiper"
+  class="tw-mb-3 md:tw-mb-4 lg:tw-mb-0 show-more-div-container tw-relative"
   id="best-seller-section-products-{{ section.id }}"
 >
   {% render 'best-seller-mobile-shelf', section: section %}
   {% render 'best-seller-desktop-shelf', section: section %}
-  <div class="swiper-scrollbar"></div>
 </div>
 <input type="checkbox" class="!tw-hidden" name="show-more-{{ section.id }}" id="show-more-{{ section.id }}">
 <label
